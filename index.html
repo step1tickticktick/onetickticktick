@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Page</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .header {
+            color: #008000;
+            font-size: 2rem;
+            margin-top: 50px; /* Adjust top margin to move it down */
+            text-align: center;
+        }
+
+        .content {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .image-caption {
+            color: #008000;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Keeps the ellipsis from shifting text */
+        .ellipsis {
+            display: inline-block;
+            width: 2em; /* Adjust width so the text doesn't shift */
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>Initiating<span class="ellipsis" id="ellipsis"></span></p>
+    </div>
+
+    <div class="content">
+        <!-- Example Image 1 -->
+        <div class="image-container">
+            <img src="/home/parrot2001/onetickticktick/images/r0g0b0.png" alt="Image 1">
+            <div class="image-caption"></div>
+        </div>
+
+        <!-- Example Image 2 -->
+        <div class="image-container">
+            <img src="/home/parrot2001/onetickticktick/images/easydifficulty.png" alt="Image 2">
+            <div class="image-caption"><a href=https://www.billboard.com/music/rb-hip-hop/drake-birthday-party-mac-and-cheese-fans-confused-9472910/></a></div>
+        </div>
+        <div class="image-container">
+            <img src="/home/parrot2001/onetickticktick/images/Smallwoventagreverseprime.png" alt="Image 1">
+            <div class="image-caption"></div>
+        </div>
+    </div>
+
+    <script>
+        const ellipsis = document.getElementById("ellipsis");
+        const dots = ["", ".", ". .", ". . ."];
+        let count = 0;
+
+        setInterval(() => {
+            ellipsis.textContent = dots[count];
+            count = (count + 1) % dots.length; // Loops back to start
+        }, 500); // Adjust speed here (500ms = 0.5 seconds per change)
+    </script>
+</body>
+</html>
